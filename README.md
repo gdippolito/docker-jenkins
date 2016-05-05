@@ -9,6 +9,8 @@ Currently using the following version:
 - Mesos 0.28.1
 - Jenkins mesos plugin 0.12
 
+Details:
+
 - It will run an eager Jenkins master (more details below).
 - It will provision slaves in a Mesos cluster.
 - The Mesos cluster is discovered using a Zookeeper cluster.
