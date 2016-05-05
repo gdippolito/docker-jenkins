@@ -1,6 +1,6 @@
 # docker-jenkins
 
-[![Build Status](https://travis-ci.org/gdipp/docker-jenkins.svg?branch=master)](https://travis-ci.org/gdipp/docker-jenkins)
+[![Build Status](https://travis-ci.org/gdippolito/docker-jenkins.svg?branch=master)](https://travis-ci.org/gdippolito/docker-jenkins)
 
 This is a Mesos-aware containerized jenkins server.
 
