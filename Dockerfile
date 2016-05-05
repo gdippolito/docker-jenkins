@@ -3,15 +3,15 @@
 #------------------------------------------------------------------------------
 
 FROM centos:7
-MAINTAINER Marc Villacorta Morera <marc.villacorta@gmail.com>
+MAINTAINER Giulio <>
 
 #------------------------------------------------------------------------------
 # Environment variables:
 #------------------------------------------------------------------------------
 
-ENV MESOS_VERSION="0.28.0" \
+ENV MESOS_VERSION="0.28.1" \
     MESOS_URL="http://repos.mesosphere.io/el/7/noarch/RPMS" \
-    JENKINS_VERSION="1.651.1" \
+    JENKINS_VERSION="2.1" \
     JENKINS_MESOS_VERSION="0.12.0"
 
 #------------------------------------------------------------------------------
@@ -25,7 +25,7 @@ RUN rpm --import http://mirror.centos.org/centos/7/os/x86_64/RPM-GPG-KEY-CentOS-
 # Install libmesos:
 #------------------------------------------------------------------------------
 
-RUN yum install -y ${MESOS_URL}/mesosphere-el-repo-7-1.noarch.rpm \
+RUN yum install -y ${MESOS_URL}/mesosphere-el-repo-7-3.noarch.rpm \
     yum-utils subversion-libs apr-util && mkdir /tmp/mesos && cd /tmp/mesos \
     && yumdownloader mesos-${MESOS_VERSION} && rpm2cpio mesos*.rpm | cpio -idm \
     && cp usr/lib/libmesos-*.so /usr/lib/ && cd /usr/lib \

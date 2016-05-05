@@ -1,8 +1,13 @@
 # docker-jenkins
 
-[![Build Status](https://travis-ci.org/h0tbird/docker-jenkins.svg?branch=master)](https://travis-ci.org/h0tbird/docker-jenkins)
+[![Build Status](https://travis-ci.org/gdipp/docker-jenkins.svg?branch=master)](https://travis-ci.org/gdipp/docker-jenkins)
 
 This is a Mesos-aware containerized jenkins server.
+
+Currently using the following version:
+- Jenkins 2.1
+- Mesos 0.28.1
+- Jenkins mesos plugin 0.12
 
 - It will run an eager Jenkins master (more details below).
 - It will provision slaves in a Mesos cluster.
@@ -26,7 +31,7 @@ docker run -it --rm \
 --name jenkins \
 --volume ${PWD}/jenkins_data:/var/lib/jenkins \
 --publish 8080:8282 \
-h0tbird/jenkins:v1.651.1-2
+gdipp/jenkins:2.1
 ```
 
 ### Over provisioning flags
