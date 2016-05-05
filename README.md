@@ -33,7 +33,7 @@ docker run -it --rm \
 --name jenkins \
 --volume ${PWD}/jenkins_data:/var/lib/jenkins \
 --publish 8080:8282 \
-gdipp/jenkins:2.1
+baraldi/jenkins-mesos-plugin
 ```
 
 ### Over provisioning flags
