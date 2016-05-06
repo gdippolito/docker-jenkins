@@ -1,0 +1,2 @@
+credentials:1.28
+mesos:0.12.0
