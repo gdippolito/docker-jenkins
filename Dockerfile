@@ -38,7 +38,7 @@ RUN yum install -y ${MESOS_URL}/mesosphere-el-repo-7-3.noarch.rpm \
 RUN rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key \
     && yum install -y java-1.8.0-openjdk-headless java-1.8.0-openjdk-devel wget openssl \
     && wget -q -O /etc/yum.repos.d/jenkins.repo \
-       http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo \
+       http://pkg.jenkins-ci.org/redhat/jenkins.repo \
     && yum install -y git jenkins-${JENKINS_VERSION} && yum clean all
 
 #------------------------------------------------------------------------------
