@@ -5,7 +5,7 @@
 This is a Mesos-aware containerized jenkins server.
 
 Currently using the following version:
-- Jenkins 2.1
+- Jenkins 2.2
 - Mesos 0.28.1
 - Jenkins mesos plugin 0.12
 
