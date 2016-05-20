@@ -5,7 +5,7 @@
 This is a Mesos-aware containerized jenkins server.
 
 Currently using the following version:
-- Jenkins 2.2
+- Jenkins 2.5
 - Mesos 0.28.1
 - Jenkins mesos plugin 0.12
 
@@ -32,9 +32,13 @@ docker run -it --rm \
 --env SSL_TRUST=foo:443,bar:443 \
 --name jenkins \
 --volume ${PWD}/jenkins_data:/var/lib/jenkins \
---publish 8080:8282 \
+--net=host \
 baraldi/jenkins-mesos-plugin
 ```
+
+### TODO
+
+Manul plugin installation is broken is version 2.2
 
 ### Over provisioning flags
 

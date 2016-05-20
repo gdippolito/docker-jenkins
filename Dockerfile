@@ -12,7 +12,7 @@ MAINTAINER Giulio <>
 ENV MESOS_VERSION="0.28.1" \
     MESOS_URL="http://repos.mesosphere.io/el/7/noarch/RPMS" \
     JENKINS_UC="https://updates.jenkins.io" \
-    JENKINS_VERSION="2.2" \
+    JENKINS_VERSION="2.5-1.1" \
     JENKINS_MESOS_VERSION="0.12.0"
 
 #------------------------------------------------------------------------------
