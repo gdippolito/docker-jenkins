@@ -64,6 +64,13 @@ RUN mkdir -p /var/lib/jenkins/plugins && cd /var/lib/jenkins/plugins \
 && /usr/local/bin/plugins.sh  /var/lib/jenkins/plugins.txt
 
 #------------------------------------------------------------------------------
+# Move jenkins dir in staging directory:
+#------------------------------------------------------------------------------
+
+RUN mv /var/lib/jenkins /var/lib/jenkins_staging
+
+
+#------------------------------------------------------------------------------
 # Expose ports and entrypoint:
 #------------------------------------------------------------------------------
 
