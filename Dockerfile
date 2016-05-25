@@ -12,7 +12,7 @@ MAINTAINER Giulio <>
 ENV MESOS_VERSION="0.28.1" \
     MESOS_URL="http://repos.mesosphere.io/el/7/noarch/RPMS" \
     JENKINS_UC="https://updates.jenkins.io" \
-    JENKINS_VERSION="2.5-1.1" \
+    JENKINS_VERSION="2.6-1.1" \
     JENKINS_MESOS_VERSION="0.12.0"
 
 #------------------------------------------------------------------------------
@@ -42,30 +42,26 @@ RUN rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key \
        http://pkg.jenkins-ci.org/redhat/jenkins.repo \
     && yum install -y git jenkins-${JENKINS_VERSION} && yum clean all
 
+
 #------------------------------------------------------------------------------
 # Copy plugin dependencies:
 #------------------------------------------------------------------------------
 
 COPY plugins.sh /usr/local/bin/plugins.sh
-COPY plugins.txt /var/lib/jenkins/plugins.txt
-
-
 RUN yum install unzip -y && yum clean all
-
-
-#------------------------------------------------------------------------------
-# Install plugins:
-#------------------------------------------------------------------------------
-
-RUN mkdir -p /var/lib/jenkins/plugins && cd /var/lib/jenkins/plugins \
-    && /usr/local/bin/plugins.sh  /var/lib/jenkins/plugins.txt
 
 #------------------------------------------------------------------------------
 # Populate root file system:
 #------------------------------------------------------------------------------
 
 ADD rootfs /
-RUN mv /var/lib/jenkins /var/lib/jenkins_staging
+
+#------------------------------------------------------------------------------
+# Install plugins:
+#------------------------------------------------------------------------------
+
+RUN mkdir -p /var/lib/jenkins/plugins && cd /var/lib/jenkins/plugins \
+&& /usr/local/bin/plugins.sh  /var/lib/jenkins/plugins.txt
 
 #------------------------------------------------------------------------------
 # Expose ports and entrypoint:
